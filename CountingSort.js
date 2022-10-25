@@ -1,18 +1,19 @@
 const countingSort = (arr) => {
-  let counter = [];
+  let freq = [];
   let counted = [];
   for (let i = 0; i < arr.length; i++) {
-    counter[i] = 0;
+    freq[i] = 0;
     counted[i] = false;
   }
   for (let i = 0; i < arr.length; i++) {
+    if (counted[i] == true) continue;
     for (let j = 0; j < arr.length; j++) {
-      let pos = arr[j];
-      if (arr[i] === arr[j] && counted[j] === false) {
-        counter[pos]++;
+      let pos = arr[i];
+      if (arr[i] === arr[j]) {
+        freq[pos]++;
         counted[j] = true;
       }
     }
   }
-  return counter;
+  return freq.slice(0, 100);
 };
