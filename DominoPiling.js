@@ -1,4 +1,4 @@
 const DominoPiling = (m, n) => {
-  let maxdoms = (m * n) / 2;
+  let maxdoms = Math.floor((m * n) / 2);
   return maxdoms;
 };
