@@ -1,14 +1,16 @@
 const gradingStudents = (grades) => {
-  for (let i = 0; i < grades.length; i++) {
-    if (grades[i] < 38) {
-      grades[i] = grades[i];
-      continue;
-    }
-    let n = Math.floor(grades[i] / 5) + 1;
-    if (grades[i] < n * 5) {
-      if (n * 5 - grades[i] < 3) grades[i] = n * 5;
-    } else if (grades[i] > n * 5) {
-      if ((n + 1) * 5 - grades[i] < 3) grades[i] = (n + 1) * 5;
+  for (let g of grades) {
+    if (g < 38);
+    else {
+      let n = Math.floor(g / 5);
+      let m = 5 * n;
+      if (m < g) {
+        m = m + 5;
+      }
+      if (m - g < 3) {
+        grades[grades.indexOf(g)] = m;
+      }
+      console.log(n, m, g);
     }
   }
   return grades;
